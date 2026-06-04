@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-
+import back from '../images/arrow-left.png'
 
 
 const Edit = () => {
@@ -30,7 +30,7 @@ const Edit = () => {
     async function handleUpdateForm(e) {
         e.preventDefault();
         let response = await fetch(`${import.meta.env.VITE_API_URL}/application/updateApp/${state._id}`, {
-            method: 'POST',
+            method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             credentials:'include',
             body: JSON.stringify(formData)
@@ -51,6 +51,9 @@ const Edit = () => {
     }
   
   return (
+    <>
+    <button className="flex cursor-pointer" onClick={()=>navigate(-1)}><img src={back} alt='back' /> Back</button>
+    
     <div className=" h-screen flex flex-col justify-start items-center gap-10">
       
           <h1>Add Application</h1>
@@ -70,7 +73,8 @@ const Edit = () => {
 
             <input className="w-1/6 px-4 py-2 rounded-md bg-green-400 text-white" type="submit" value='Create' />
         </form>
-    </div>
+      </div>
+      </>
   )
 }
 

@@ -76,10 +76,10 @@ const ApplicationCard = ({ application, handleDelete, handleEdit}) => {
       <a href={application.platform} target="_blank" className="underline underline-offset-2">Link</a>
       <p>Applied Date: {new Date(application.appliedDate).toLocaleDateString()} </p>
                   <div className="flex gap-3 justify-center">
-        <button className=" px-3 py-1 rounded-md" onClick={() => setIsOpen(true)}><img src={ noteIcon } alt='noteIcon'/></button>
+        <button className=" px-3 py-1 cursor-pointer" onClick={() => setIsOpen(true)}><img src={ noteIcon } alt='noteIcon'/></button>
         
-                  <button className="px-3 py-1 rounded-md" onClick={() => { handleDelete(application._id) }}><img src={ deleteIcon } alt='deleteIcon'/></button>
-        <button className="px-3 py-1 rounded-md" onClick={() => { handleEdit(application._id) }}><img src={ editIcon } alt='editIcon'/></button>
+                  <button className="px-3 py-1 cursor-pointer" onClick={() => { handleDelete(application._id) }}><img src={ deleteIcon } alt='deleteIcon'/></button>
+        <button className="px-3 py-1 cursor-pointer" onClick={() => { handleEdit(application._id) }}><img src={ editIcon } alt='editIcon'/></button>
        
       </div>
 
@@ -93,8 +93,8 @@ const ApplicationCard = ({ application, handleDelete, handleEdit}) => {
         return <div key={note._id} className="bg-yellow-200 rounded-md p-2 mb-5 flex flex-col gap-3">
           <p>{note.content}</p>
           <div className="flex gap-3 justify-end">
-            <button  onClick={() => handleDeleteNote(note._id)}><img className="w-5" src={ deleteIcon } alt='deleteIcon'/></button>
-            <button  onClick={()=>{  setIsOpen(true); setSelectedNote(note)}}  ><img className="w-5" src={ editIcon } alt='editIcon'/></button>
+            <button className="cursor-pointer" onClick={() => handleDeleteNote(note._id)}><img className="w-5" src={ deleteIcon } alt='deleteIcon'/></button>
+            <button className="cursor-pointer" onClick={()=>{  setIsOpen(true); setSelectedNote(note)}}  ><img className="w-5" src={ editIcon } alt='editIcon'/></button>
           </div>
         </div>
       })}

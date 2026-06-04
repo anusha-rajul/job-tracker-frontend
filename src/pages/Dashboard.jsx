@@ -93,7 +93,6 @@ const Dashboard = () => {
 
   async function handleEdit(id) {
     let response = await fetch(`${import.meta.env.VITE_API_URL}/application/update/${id}`, {
-      method:'PATCH',
       credentials: 'include',
    
     })
@@ -152,17 +151,17 @@ const Dashboard = () => {
 
       
         
-      <h1 className="text-center text-2xl font-bold">Welcome, {isLoading? <Skeleton width={100} /> : user?.name}</h1>
+      <h1 className="text-center text-2xl font-bold">Welcome, {isLoading? <Skeleton width={100} borderRadius={5} /> : user?.name}</h1>
       <div className="m-5 ">
 
-        <h2 className="mb-7 text-xl font-semibold">Your Applications: { sum }</h2>
+        <h2 className="mb-7 text-xl font-semibold">Your Applications: {isLoading? <Skeleton width={100} height={50} borderRadius={5}/>: <div className="bg-blue-300 w-fit px-10 inline-block rounded-md py-2">{ sum }</div>}</h2>
       
      
         <DragDropProvider onDragEnd={handleDragEnd}>
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {Object.keys(applications).map((column) => (
 
-            isLoading ? (<div key={column} className="flex flex-col gap-2"><Skeleton height={50} /> <Skeleton height={300}/></div>) : (<Column id={column} key={column}>
+            isLoading ? (<div key={column} className="flex flex-col gap-2"><Skeleton height={50} /> <Skeleton height={300} /></div>) : (<Column id={column} key={column}>
               <h1 className="mb-4 font-bold text-lg p-2 capitalize bg-green-300 rounded-md text-center" >{column}</h1>
               {applications[column].map((application) => (
 
