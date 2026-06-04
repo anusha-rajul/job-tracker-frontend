@@ -4,10 +4,13 @@ import ApplicationCard from "../components/ApplicationCard";
 import { toast } from 'react-toastify';
 import { DragDropProvider } from '@dnd-kit/react'
 import Column from "../components/Column";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Dashboard = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
   const [applications, setApplications] = useState({
     applied: [],
     interview: [],
@@ -52,6 +55,7 @@ const Dashboard = () => {
           offer: data.applications.filter(app => app.status === 'offer'),
           
         }
+        setIsLoading(false)
         setApplications(groupedApplications)
       } else {
         setApplications({
@@ -147,7 +151,7 @@ const Dashboard = () => {
 
       
         
-      <h1 className="text-center text-2xl font-bold">Welcome, {user?.name}</h1>
+      <h1 className="text-center text-2xl font-bold">Welcome, {isLoading? <Skeleton width={100} /> : user?.name}</h1>
       <div className="m-5 ">
 
         <h2 className="mb-7 text-xl font-semibold">Your Applications: { sum }</h2>
@@ -157,14 +161,14 @@ const Dashboard = () => {
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {Object.keys(applications).map((column) => (
 
-            <Column id={column} key={column}>
+            isLoading ? (<div key={column} className="flex flex-col gap-2"><Skeleton height={50} /> <Skeleton height={300}/></div>) : (<Column id={column} key={column}>
               <h1 className="mb-4 font-bold text-lg p-2 capitalize bg-green-300 rounded-md text-center" >{column}</h1>
               {applications[column].map((application) => (
 
-                <ApplicationCard key={application._id} application={application} handleDelete={handleDelete} handleEdit={handleEdit} />
+              <ApplicationCard key={application._id} application={application} handleDelete={handleDelete} handleEdit={handleEdit} />
                 
               ))}
-              </Column>
+              </Column>)
           ))}
         </div>
       </DragDropProvider>

@@ -66,14 +66,8 @@ const Edit = () => {
           <option value="offer">Offer</option>
         
         </select>
-        <select name="platform" onChange={handleUpdate} value={formData.platform} className="w-1/3 px-4 py-2 rounded-md bg-zinc-100" placeholder="Platform">
-          <option value=""></option>
-          <option value="linkedIn">LinkedIn</option>
-          <option value="naukri">Naukri</option>
-          <option value="indeed">Indeed</option>
-          <option value="internshala">Internshala</option>
-          <option value="other">Other</option>
-        </select>
+        <input name="platform" onChange={handleUpdate} value={formData.platform} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" placeholder="Add link" />
+
             <input className="w-1/6 px-4 py-2 rounded-md bg-green-400 text-white" type="submit" value='Create' />
         </form>
     </div>

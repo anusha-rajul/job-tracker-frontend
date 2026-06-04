@@ -7,7 +7,7 @@ import deleteIcon from '../images/trash.png'
 import editIcon from '../images/pencil.png'
 import { useDraggable } from "@dnd-kit/react"
 
-const ApplicationCard = ({ application, handleDelete, handleEdit }) => {
+const ApplicationCard = ({ application, handleDelete, handleEdit}) => {
 
   let { ref, isDragging } = useDraggable({
     id: application._id
@@ -73,7 +73,7 @@ const ApplicationCard = ({ application, handleDelete, handleEdit }) => {
                   <h2 className="font-bold">Company: {application.companyName}</h2>
                   <p>Role: {application.role}</p>
                   <p>Salary: {application.salary}</p>
-      <p>Platform: {application.platform}</p>
+      <a href={application.platform} target="_blank" className="underline underline-offset-2">Link</a>
       <p>Applied Date: {new Date(application.appliedDate).toLocaleDateString()} </p>
                   <div className="flex gap-3 justify-center">
         <button className=" px-3 py-1 rounded-md" onClick={() => setIsOpen(true)}><img src={ noteIcon } alt='noteIcon'/></button>
