@@ -15,10 +15,10 @@ const App = () => {
       <Navbar />
       <ToastContainer />
       <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Dashboard />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              {/* <Route path="/dashboard" element={<Dashboard />} /> */}
               <Route path="/application" element={<Application />} />
               <Route path="/edit" element={<Edit />} />
               <Route path="/notes" element={<Notes />} />

@@ -41,7 +41,7 @@ const Navbar = () => {
         {isOpen && (
           <li onClick={closeMenu}><img className='w-6 absolute right-5' src={cross} alt='cross' /></li>
              )} 
-              {isLoggedIn? <><li><Link to="/dashboard">Dashboard</Link></li>
+              {isLoggedIn? <>
               <li><Link to='/application'>Create application</Link></li></>: ''}
               {isLoggedIn? <li className="px-6 py-2 bg-blue-400 rounded-md cursor-pointer text-white" onClick={handleLogout}>Logout</li> : <li className="px-6 py-2 bg-blue-400 rounded-md"><Link to='/login'>Login</Link></li>}
             
