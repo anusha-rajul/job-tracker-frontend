@@ -11,7 +11,7 @@ const Navbar = () => {
 
     async function handleLogout() {
        try {
-         let response = await fetch('http://localhost:3000/user/logout', {
+         let response = await fetch(`${import.meta.env.VITE_API_URL}/user/logout`, {
            credentials:'include'
          });
          let data = await response.json()
