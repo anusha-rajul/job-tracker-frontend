@@ -71,6 +71,7 @@ const Dashboard = () => {
   
   async function handleDelete(id) {
     let response = await fetch(`${import.meta.env.VITE_API_URL}/application/delete/${id}`, {
+      method:'DELETE',
       credentials:'include'
     });
 
@@ -92,7 +93,7 @@ const Dashboard = () => {
 
   async function handleEdit(id) {
     let response = await fetch(`${import.meta.env.VITE_API_URL}/application/update/${id}`, {
-
+      method:'PATCH',
       credentials: 'include',
    
     })
