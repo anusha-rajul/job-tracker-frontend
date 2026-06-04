@@ -24,7 +24,7 @@ const ApplicationCard = ({ application, handleDelete, handleEdit }) => {
   
   useEffect(() => {
     async function getApplications() {
-      let response = await fetch(`http://localhost:3000/notes/getNotes/${application._id}`, {
+      let response = await fetch(`${import.meta.env.VITE_API_URL}/notes/getNotes/${application._id}`, {
         credentials: 'include'
       })
       let data = await response.json()
@@ -37,7 +37,7 @@ const ApplicationCard = ({ application, handleDelete, handleEdit }) => {
   }, [application._id])
   
   async function handleDeleteNote(id) {
-    let response = await fetch(`http://localhost:3000/notes/delete/${id}`, {
+    let response = await fetch(`${import.meta.env.VITE_API_URL}/notes/delete/${id}`, {
       method: 'DELETE',
       credentials: 'include'
     });
@@ -51,7 +51,7 @@ const ApplicationCard = ({ application, handleDelete, handleEdit }) => {
   }
 
   async function handleEditNote(id, updatedNote) {
-    let response = await fetch(`http://localhost:3000/notes/edit/${id}`, {
+    let response = await fetch(`${import.meta.env.VITE_API_URL}/notes/edit/${id}`, {
       method: 'PATCH',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },

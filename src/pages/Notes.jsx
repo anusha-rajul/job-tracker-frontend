@@ -18,7 +18,7 @@ const Notes = ({closeModal, notes, setNotes, applicationId, setIsOpen , selected
     async function handleAddNote(e) {
         
         e.preventDefault();
-           let response = await fetch(`http://localhost:3000/notes/`, {
+           let response = await fetch(`${import.meta.env.VITE_API_URL}/notes/`, {
             method: 'POST',
             headers: {'Content-Type' : 'application/json'},
             credentials: 'include',

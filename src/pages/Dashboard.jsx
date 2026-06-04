@@ -20,7 +20,7 @@ const Dashboard = () => {
   useEffect(() => {
     async function getDashboard() {
        
-        let response = await fetch('http://localhost:3000/user/dashboard', {
+        let response = await fetch(`${import.meta.env.VITE_API_URL}/user/dashboard`, {
       credentials: 'include'
         });
        
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     async function getApplications() {
-      let response = await fetch('http://localhost:3000/application', {
+      let response = await fetch(`${import.meta.env.VITE_API_URL}/application`, {
         credentials:'include'
       })
       let data = await response.json();
@@ -66,7 +66,7 @@ const Dashboard = () => {
   }, [])
   
   async function handleDelete(id) {
-    let response = await fetch(`http://localhost:3000/application/delete/${id}`, {
+    let response = await fetch(`${import.meta.env.VITE_API_URL}/application/delete/${id}`, {
       credentials:'include'
     });
 
@@ -87,7 +87,7 @@ const Dashboard = () => {
   }
 
   async function handleEdit(id) {
-    let response = await fetch(`http://localhost:3000/application/update/${id}`, {
+    let response = await fetch(`${import.meta.env.VITE_API_URL}/application/update/${id}`, {
 
       credentials: 'include',
    
@@ -128,7 +128,7 @@ const Dashboard = () => {
     if (movedApp) {
       updated[newStatus].push(movedApp);
       setApplications(updated)
-      await fetch(`http://localhost:3000/application/status/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/application/status/${id}`, {
         method: "PATCH",
         credentials: 'include',
         headers:{'Content-Type':'application/json'},

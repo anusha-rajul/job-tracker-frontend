@@ -24,7 +24,7 @@ const Application = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      let response = await fetch('http://localhost:3000/application/create', {
+      let response = await fetch(`${import.meta.env.VITE_API_URL}/application/create`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials:'include',

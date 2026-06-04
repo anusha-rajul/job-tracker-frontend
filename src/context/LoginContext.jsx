@@ -9,7 +9,7 @@ const LoginContext = (props) => {
 
     useEffect(() => {
         async function checkLogin() {
-            let response = await fetch('http://localhost:3000/user/dashboard', {
+            let response = await fetch(`${import.meta.env.VITE_API_URL}/user/dashboard`, {
                 credentials:'include'
             })
             let data = await response.json()

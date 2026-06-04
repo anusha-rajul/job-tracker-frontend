@@ -29,7 +29,7 @@ const Edit = () => {
 
     async function handleUpdateForm(e) {
         e.preventDefault();
-        let response = await fetch(`http://localhost:3000/application/updateApp/${state._id}`, {
+        let response = await fetch(`${import.meta.env.VITE_API_URL}/application/updateApp/${state._id}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials:'include',
