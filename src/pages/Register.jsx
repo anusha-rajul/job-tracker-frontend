@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 const Register = () => {
   const navigate = useNavigate()
  
@@ -36,12 +37,14 @@ const Register = () => {
           password: ''
         })
         navigate('/')
+        toast.success(data.message)
 
       } else {
         navigate('/register');
+        toast.error(data.message)
       }
     } catch (error) {
-      console.log(error)
+      toast.error(error)
     }
   }
   

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate()
-  const [message, setMessage] = useState('')
+ 
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -37,17 +38,17 @@ const Login = () => {
           navigate('/')
         } else {
           navigate('/login')
-          setMessage(data.message) 
+          toast.error(data.message)
         }
       } catch (error) {
-        console.log(error)
+         toast.error(error)
       }
   }
 
   return (
     
     <div className="h-screen flex flex-col justify-center items-center gap-10">
-      {message ? <h1>{message}</h1> :''}
+     
       <h1 className="text-2xl font-bold">Login</h1>
       <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4 w-full">
         <input onChange={handleFormData} value={formData.email} className="px-4 py-2 border-none bg-zinc-200 rounded-md md:w-1/3" type="email" name="email" placeholder="email" />
