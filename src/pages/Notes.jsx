@@ -53,8 +53,9 @@ const Notes = ({closeModal, notes, setNotes, applicationId, setIsOpen , selected
           <form onSubmit={handleAddNote} className="flex flex-col gap-5">
               <textarea name="content" onChange={handleOnChange} value={note.content} placeholder="Add a note" className="border p-2"></textarea>
               <div className="flex justify-end gap-6 ">
+                   <button type="button" className="bg-yellow-200 px-4 py-1 rounded-lg" onClick={handleCancel} > Cancel </button>
                 {selectedNote ?   <button type="button" className="bg-yellow-200 px-4 py-1 rounded-lg" onClick={()=>{handleEditNote(selectedNote._id, note)}}>Save</button> :   <button className="bg-yellow-200 px-4 py-1 rounded-lg" type="submit">Add</button>}
-              <button type="button" className="bg-yellow-200 px-4 py-1 rounded-lg" onClick={handleCancel} > Cancel </button>
+             
               </div>
        </form>
     </div>
