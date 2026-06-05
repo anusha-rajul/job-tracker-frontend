@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 const Register = () => {
   const navigate = useNavigate()
-  const [message, setMessage] = useState('')
+ 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,18 +28,17 @@ const Register = () => {
       })
       let data = await response.json()
       if (data.success) {
-        setMessage(data.message);
+   
 
         setFormData({
           name: '',
           email: '',
           password: ''
         })
-        navigate('/dashboard')
+        navigate('/')
 
       } else {
         navigate('/register');
-        setMessage(data.message);
       }
     } catch (error) {
       console.log(error)
@@ -50,7 +49,6 @@ const Register = () => {
 <>
  
       <div className="h-screen flex flex-col justify-center items-center gap-10">
-        {message ? <h1 className='bg-green-400 w-1/6 md:w-1/3 py-2 text-center text-white font-bold rounded-md'>{message}</h1> : '' }
       <h1 className="text-2xl font-bold">Register</h1>
       <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4 w-full">
         <input onChange={handleFormData} value={formData.name} className="px-4 py-2 border-none bg-zinc-200 rounded-md w-full md:w-1/3" type="text" name="name" placeholder="name" />

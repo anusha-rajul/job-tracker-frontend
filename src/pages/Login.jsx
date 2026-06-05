@@ -34,7 +34,7 @@ const Login = () => {
             email: '',
             password: ''
           })
-          navigate('/dashboard')
+          navigate('/')
         } else {
           navigate('/login')
           setMessage(data.message) 
