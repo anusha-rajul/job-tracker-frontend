@@ -57,12 +57,12 @@ const Edit = () => {
     <div className=" h-screen flex flex-col justify-start items-center gap-10">
       
           <h1>Add Application</h1>
-        <form onSubmit={handleUpdateForm} className="flex flex-col gap-4 w-full items-center justify-start ">
-            <input onChange={handleUpdate} value={formData.companyName} className="w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="text" name="companyName" placeholder="Company Name" /> 
-            <input  onChange={handleUpdate}  value={formData.role} className="w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="text" name="role" placeholder="Role" />  
-            <input  onChange={handleUpdate} value={formData.salary} className="w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="number" name="salary" placeholder="Salary" />
-            <input  onChange={handleUpdate} value={formData.appliedDate} className="w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="date" name="appliedDate" />
-        <select name="status"  onChange={handleUpdate} value={formData.status} className="w-1/3 px-4 py-2 rounded-md bg-zinc-100">
+        <form onSubmit={handleUpdateForm} className="flex flex-col gap-4 w-full items-center justify-start p-5">
+            <input onChange={handleUpdate} value={formData.companyName} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="text" name="companyName" placeholder="Company Name" /> 
+            <input  onChange={handleUpdate}  value={formData.role} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="text" name="role" placeholder="Role" />  
+            <input  onChange={handleUpdate} value={formData.salary} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="number" name="salary" placeholder="Salary" />
+            <input  onChange={handleUpdate} value={formData.appliedDate} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="date" name="appliedDate" />
+        <select name="status"  onChange={handleUpdate} value={formData.status} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100">
           <option value="applied">Applied</option>
           <option value="interview">Interview</option>
           <option value="rejected">Rejected</option>
@@ -71,7 +71,7 @@ const Edit = () => {
         </select>
         <input name="platform" onChange={handleUpdate} value={formData.platform} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" placeholder="Add link" />
 
-            <input className="w-1/6 px-4 py-2 rounded-md bg-green-400 text-white" type="submit" value='Create' />
+            <input className="w-2/5 md:w-1/6 px-4 py-2 rounded-md bg-green-400 text-white" type="submit" value='Create' />
         </form>
       </div>
       </>
