@@ -46,7 +46,7 @@ const Edit = () => {
           status: 'applied',
           platform: ''
         })
-        navigate('/dashboard')
+        navigate('/')
       }
     }
   

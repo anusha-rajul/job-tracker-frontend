@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import back from '../images/arrow-left.png'
+import { toast } from "react-toastify";
 
 const Application = () => {
   const navigate = useNavigate()
@@ -12,7 +13,7 @@ const Application = () => {
     appliedDate: '',
     platform: ''
   })
-  const [message, setMessage] = useState('')
+
 
   function handleForm(e) {
     const { name, value } = e.target;
@@ -41,14 +42,14 @@ const Application = () => {
           status: 'applied',
           platform: ''
         })
-        navigate('/dashboard')
+        navigate('/')
       }
       else {
-        setMessage(data.message)
         navigate('/login')
+        toast.error(data.message)
       }
     } catch (error) {
-      console.log(error)
+      toast.error(error)
     }
   }
 
@@ -56,7 +57,7 @@ const Application = () => {
     <>
       <button className="flex cursor-pointer" onClick={()=>navigate(-1)}><img src={back} alt='back' /> Back</button>
     <div className=" h-screen flex flex-col justify-start items-center gap-10">
-      {message?{message}:''}
+      
           <h1 className="font-bold text-2xl">Add Application</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full items-center justify-start p-5">
             <input onChange={handleForm} value={formData.companyName} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="text" name="companyName" placeholder="Company Name" /> 
