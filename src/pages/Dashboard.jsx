@@ -158,11 +158,11 @@ const Dashboard = () => {
       
      
         <DragDropProvider onDragEnd={handleDragEnd}>
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {Object.keys(applications).map((column) => (
 
             isLoading ? (<div key={column} className="flex flex-col gap-2"><Skeleton height={50} /> <Skeleton height={300} /></div>) : (<Column id={column} key={column}>
-              <h1 className="mb-4 font-bold text-lg p-2 capitalize bg-green-300 rounded-md text-center" >{column}</h1>
+              <h1 className="mb-4 font-bold text-lg p-2 capitalize bg-zinc-300 rounded-md text-center" >{column}</h1>
               {applications[column].map((application) => (
 
               <ApplicationCard key={application._id} application={application} handleDelete={handleDelete} handleEdit={handleEdit} />

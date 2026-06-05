@@ -69,7 +69,7 @@ const ApplicationCard = ({ application, handleDelete, handleEdit}) => {
 
 
   return (
-    <div ref={ref} className={`bg-white rounded-lg border border-white shadow-md p-3 text-lg mb-4 cursor-grab ${isDragging ? "opacity-50": ""}`}>
+    <div ref={ref} className={`bg-white rounded-lg border border-white shadow-md py-1 px-3 text-lg mb-4 cursor-grab ${isDragging ? "opacity-50": ""}`}>
                   <h2 className="font-bold">Company: {application.companyName}</h2>
                   <p>Role: {application.role}</p>
                   <p>Salary: {application.salary}</p>
