@@ -1,16 +1,30 @@
-# React + Vite
+# Job Application Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web app to manage and track job applications with a Kanban-style board.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Drag-and-drop Kanban board (dnd-kit) with status columns
+- JWT authentication with HTTP-only cookies
+- User-scoped data — each user only sees their own applications
+- Skeleton loading for better UX
+- Full CRUD for job applications
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend:** React.js, Tailwind CSS, dnd-kit  
+**Backend:** Node.js, Express.js  
+**Database:** MongoDB  
+**Auth:** JWT, bcrypt
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screenshots
+<img width="1917" height="915" alt="project4" src="https://github.com/user-attachments/assets/08cb41c9-1778-4c85-8cd2-911e7bd41e9d" />
+<img width="1907" height="897" alt="Screenshot 2026-06-13 165453" src="https://github.com/user-attachments/assets/13262be9-1567-4c32-b684-c5b178d4bd2c" />
+<img width="1911" height="902" alt="ss" src="https://github.com/user-attachments/assets/4941d885-9031-4e79-86da-1960a2c722bb" />
+
+
+
+## Live Demo
+
+http://job-tracker-frontend-sigma-one.vercel.app/
