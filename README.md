@@ -19,9 +19,11 @@ A full-stack web app to manage and track job applications with a Kanban-style bo
 
 
 ## Screenshots
-<img width="1917" height="915" alt="project4" src="https://github.com/user-attachments/assets/08cb41c9-1778-4c85-8cd2-911e7bd41e9d" />
 <img width="1907" height="897" alt="Screenshot 2026-06-13 165453" src="https://github.com/user-attachments/assets/13262be9-1567-4c32-b684-c5b178d4bd2c" />
 <img width="1911" height="902" alt="ss" src="https://github.com/user-attachments/assets/4941d885-9031-4e79-86da-1960a2c722bb" />
+<img width="1917" height="915" alt="project4" src="https://github.com/user-attachments/assets/08cb41c9-1778-4c85-8cd2-911e7bd41e9d" />
+
+
 
 
 
