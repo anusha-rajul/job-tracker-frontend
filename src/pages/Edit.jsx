@@ -56,7 +56,7 @@ const Edit = () => {
     
     <div className=" h-screen flex flex-col justify-start items-center gap-10">
       
-          <h1>Add Application</h1>
+          <h1 className="font-bold text-lg">Edit Application</h1>
         <form onSubmit={handleUpdateForm} className="flex flex-col gap-4 w-full items-center justify-start p-5">
             <input onChange={handleUpdate} value={formData.companyName} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="text" name="companyName" placeholder="Company Name" /> 
             <input  onChange={handleUpdate}  value={formData.role} className="w-full md:w-1/3 px-4 py-2 rounded-md bg-zinc-100" type="text" name="role" placeholder="Role" />  

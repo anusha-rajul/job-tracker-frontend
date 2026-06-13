@@ -154,7 +154,7 @@ const Dashboard = () => {
       <h1 className="text-center text-2xl font-bold">Welcome, {isLoading? <Skeleton width={100} borderRadius={5} /> : user?.name}</h1>
       <div className="m-5 ">
 
-        <h2 className="mb-7 text-xl font-semibold">Your Applications: {isLoading? <Skeleton width={100} height={50} borderRadius={5}/>: <div className="bg-blue-300 w-fit px-10 inline-block rounded-md py-2">{ sum }</div>}</h2>
+        <h2 className="mb-7 text-xl font-semibold">Your Applications: {isLoading? <Skeleton width={100} height={50} borderRadius={5}/>: <div className="bg-blue-500 text-white w-fit px-10 inline-block rounded-md py-2">{ sum }</div>}</h2>
       
      
         <DragDropProvider onDragEnd={handleDragEnd}>
@@ -162,7 +162,7 @@ const Dashboard = () => {
           {Object.keys(applications).map((column) => (
 
             isLoading ? (<div key={column} className="flex flex-col gap-2"><Skeleton height={50} /> <Skeleton height={300} /></div>) : (<Column id={column} key={column}>
-              <h1 className="mb-4 font-bold text-lg p-2 capitalize bg-zinc-300 rounded-md text-center" >{column}</h1>
+              <h1 className={`mb-4 font-bold text-lg p-2 capitalize ${column === 'applied' ? 'bg-blue-400 text-white': column === 'interview' ? 'bg-amber-300' : column === 'rejected' ? 'bg-red-400 text-white' : 'bg-green-500 text-white'} rounded-md text-center`} >{column}</h1>
               {applications[column].map((application) => (
 
               <ApplicationCard key={application._id} application={application} handleDelete={handleDelete} handleEdit={handleEdit} />

@@ -69,19 +69,20 @@ const ApplicationCard = ({ application, handleDelete, handleEdit}) => {
 
 
   return (
-    <div ref={ref} className={`bg-white rounded-lg border border-white shadow-md py-1 px-3 text-lg mb-4 cursor-grab ${isDragging ? "opacity-50": ""}`}>
-                  <h2 className="font-bold">Company: {application.companyName}</h2>
-                  <p>Role: {application.role}</p>
-                  <p>Salary: {application.salary}</p>
-      <a href={application.platform} target="_blank" className="underline underline-offset-2">Link</a>
-      <p>Applied Date: {new Date(application.appliedDate).toLocaleDateString()} </p>
-                  <div className="flex gap-3 justify-center">
+    <div ref={ref} className={`bg-white rounded-lg border border-white shadow-md py-1 px-3 text-lg mb-4 cursor-grab ${isDragging ? "opacity-50" : ""}`}>
+          <div className="flex gap-3 justify-end">
         <button className=" px-3 py-1 cursor-pointer" onClick={() => setIsOpen(true)}><img src={ noteIcon } alt='noteIcon'/></button>
         
                   <button className="px-3 py-1 cursor-pointer" onClick={() => { handleDelete(application._id) }}><img src={ deleteIcon } alt='deleteIcon'/></button>
         <button className="px-3 py-1 cursor-pointer" onClick={() => { handleEdit(application._id) }}><img src={ editIcon } alt='editIcon'/></button>
        
       </div>
+                  <h2 className="font-bold">Company: {application.companyName}</h2>
+                  <p>Role: {application.role}</p>
+                  <p>Salary: {application.salary}</p>
+      <a href={application.platform} target="_blank" className="underline underline-offset-2">Link</a>
+      <p>Applied Date: {new Date(application.appliedDate).toLocaleDateString()} </p>
+              
 
       {isOpen && (
         <div className="absolute right-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-white border border-white shadow-lg w-3/4 md:w-2/5 lg:w-1/4 p-5 rounded-lg">
